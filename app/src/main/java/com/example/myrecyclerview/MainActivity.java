@@ -5,12 +5,30 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView rvHeroes;
     private ArrayList<Hero> list = new ArrayList<>();
+    public boolean onCreateOptionsMenu (Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    public boolean onOptionsItemSelected (MenuItem item) {
+        setMode(item.getItemId());
+        return super.onOptionsItemSelected(item);
+    }
+        public void setMode (int selectedMode) {
+        if(selectedMode==R.id.action_list){
+        } else if (selectedMode ==  R.id.action_grid) {
+
+        } else if (selectedMode == R.id.action_cardview) {
+
+        }
+        }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
